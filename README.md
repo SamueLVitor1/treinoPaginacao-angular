@@ -1,52 +1,20 @@
-<table
-  mat-table
-  [dataSource]="dataSource"
-  class="table-teste mat-elevation-z8"
-  *ngIf="list; else listEmpty"
->
-  <!--- Note that these columns can be defined in any order.
-        The actual rendered columns are set as a property on the row definition" -->
+## Projeto de Treinamento Angular
 
-  <!-- Position Column -->
-  <ng-container matColumnDef="id">
-    <th mat-header-cell *matHeaderCellDef>No.</th>
-    <td mat-cell *matCellDef="let element">{{ element.id }}</td>
-  </ng-container>
+Este projeto foi desenvolvido com o intuito de treinar e consolidar alguns conceitos do Angular aprendidos durante o semestre.
 
-  <!-- Name Column -->
-  <ng-container matColumnDef="name">
-    <th mat-header-cell *matHeaderCellDef>Name</th>
-    <td mat-cell *matCellDef="let element">{{ element.name }}</td>
-  </ng-container>
+📚 Conceitos Praticados
+Services
+Components
+Angular Material
+Paginação
 
-  <!-- Weight Column -->
-  <ng-container matColumnDef="numberVideos">
-    <th mat-header-cell *matHeaderCellDef>Number Videos</th>
-    <td mat-cell *matCellDef="let element" class="numberVideos-class">
-      {{ element.numberVideos }} videos
+## 📌 Versão do Angular
 
-      <button class="more-icon">
-        <img src="../../../assets/more-icon.svg" alt="" />
-      </button>
-    </td>
+Angular: 15.2.9
 
-  </ng-container>
+## 🛠️ Ferramentas e Tecnologias Utilizadas
 
-  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-  <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
-</table>
-
-<!-- <mat-paginator
-  #paginator
-  class="paginator demo-paginator"
-  (page)="handlePageEvent($event)"
-  [length]="length"
-  [pageSize]="pageSize"
-  [disabled]="disabled"
-  [showFirstLastButtons]="showFirstLastButtons"
-  [pageSizeOptions]="showPageSizeOptions ? pageSizeOptions : []"
-  [hidePageSize]="hidePageSize"
-  [pageIndex]="pageIndex"
-  aria-label="Select page"
->
-</mat-paginator> -->
+Angular CLI: Para gerenciamento do projeto.
+Angular Material: Para componentes de UI.
+RxJS: Para programação reativa.
+TypeScript: Linguagem de programação principal.
