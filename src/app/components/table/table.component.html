@@ -1,0 +1,71 @@
+<section>
+  <div>
+    <header>
+      Tags
+      <span> + Create tag</span>
+    </header>
+
+    <div class="input">
+      <label for="search-tags">
+        <img src="../../../assets/search-icon.svg" alt="" />
+      </label>
+      <input
+        (keyup)="applyFilter($event)"
+        type="text"
+        placeholder=""
+        id="search-tags"
+      />
+    </div>
+  </div>
+
+  <button>
+    <img src="../../../assets/file-down.svg" alt="file-down.svg" />
+    Export
+  </button>
+</section>
+
+<div class="mat-elevation-z8">
+  <table
+    mat-table
+    [dataSource]="dataSource"
+    class="table-teste mat-elevation-z8"
+    *ngIf="list; else listEmpty"
+  >
+    <!-- Position Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef>No.</th>
+      <td mat-cell *matCellDef="let element">{{ element.id }}</td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef>Name</th>
+      <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="numberVideos">
+      <th mat-header-cell *matHeaderCellDef>Weight</th>
+      <td mat-cell *matCellDef="let element">{{ element.numberVideos }}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+
+  <!-- paginação -->
+  <mat-paginator
+    [pageSizeOptions]="[5, 10, 20]"
+    showFirstLastButtons
+    (page)="onPageChange($event)"
+    aria-label="Select page of periodic elements"
+    class="paginator demo-paginator"
+    [length]="totalItems"
+    [pageSize]="pageSize"
+    [pageIndex]="pageIndex"
+  >
+    >
+  </mat-paginator>
+</div>
+
+<ng-template #listEmpty> sem videos ⚠️ </ng-template>
